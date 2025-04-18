@@ -1,1 +1,44 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
 .env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+logs/**/*.log
+
+# Output
+dist/
+build/
+.cache/
+.next/
+out/
+coverage/
+
+# Misc
+*.swp
+*.bak
+*.tmp
+*.old
+
+# System
+*.pid
+*.seed
+*.pid.lock
