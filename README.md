@@ -1,72 +1,77 @@
+# Morkie Faucet Bot
+
+Bot otomatis untuk klaim faucet MON di jaringan **testnet Monad** dari [https://faucet.morkie.xyz](https://faucet.morkie.xyz).  
+Bot akan terus berjalan dan melakukan klaim otomatis saat tersedia, serta menampilkan informasi mining & faucet secara real-time.
 
 ---
 
-### `README.md` (final versi lengkap)
+## Fitur
 
-```markdown
-<h1 align="center">🤖 Morkie Faucet Auto-Claim Bot</h1>
-<p align="center">
-  Script otomatis untuk klaim faucet MON di testnet Monad.
-</p>
-
----
-
-## ✨ Fitur
-
-- Cek saldo wallet MON
-- Auto klaim faucet setiap 24 jam
-- Countdown sambil menunggu
-- Terminal log yang berwarna
-- Anti-error: tetap lanjut walau gagal koneksi
+- Klaim otomatis dari faucet Morkie (jika tersedia).
+- Cek dan tampilkan info sesi seperti reward, shares, hashrate, dan waktu tersisa.
+- Tampilkan status faucet (running, stopped, expired).
+- Retry otomatis jika klaim gagal.
+- Dukungan session ganda: jika satu session selesai, bisa lanjut pakai session baru.
+- Logging berwarna & informatif di terminal.
+- Dukungan multi-thread mining hingga 32 worker.
+- DYOR (Do Your Own Research) – gunakan dengan tanggung jawab pribadi.
 
 ---
 
-## ⚙️ Instalasi & Penggunaan
+## Instalasi
 
-### Jika menggunakan Termux (Android)
-
-```bash
-pkg update && pkg upgrade
-pkg install nodejs git
-git clone https://github.com/acheronyor/morkie-faucet.git
-cd morkie-faucet
-npm install
-```
-
-### Jika menggunakan Linux / MacOS
+### 1. Clone repo ini
 
 ```bash
 git clone https://github.com/acheronyor/morkie-faucet.git
 cd morkie-faucet
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
 ```
 
-### 1. Buat file `.env`
+### 3. Siapkan file `.env`
 
-Isi dengan wallet address kamu:
+Buat file `.env` dan isi dengan:
+
 ```env
-WALLET_ADDRESS=0xAlamatWalletKamu
+SESSION_ID=isi_session_id_dari_browser
+TARGET_ADDRESS=0xAlamatWalletKamu
 ```
 
-### 2. Jalankan script
+> **Catatan:**  
+> Login dulu ke faucet di browser agar bisa bypass captcha dan dapat session ID.  
+> Lalu salin `SESSION_ID` dari devtools > Application > Cookies > `sepolia-faucet.pk910.de`.
+
+---
+
+## Jalankan script
 
 ```bash
-node auto-claim.js
+node faucet-miner.js
 ```
+
+Script akan otomatis mulai mining, tampilkan status live, dan klaim saat faucet siap.
 
 ---
 
-## ⚠️ Disclaimer
+## Peringatan
 
-**DYOR - Do Your Own Research**  
-Script ini dibuat untuk tujuan edukasi. Gunakan dengan risiko Anda sendiri.
+- Script ini **hanya untuk keperluan testnet**.
+- Tidak boleh dijalankan dari device/browser berbeda dengan tempat login.
+- Jangan gunakan untuk aktivitas berlebihan atau abuse faucet publik.
+- Tidak ada jaminan reward atau keberhasilan.
 
 ---
 
-<p align="center">
-  Made with 💻 by <strong>ACHERON</strong>
-</p>
-```
+## Author
+
+Created by **ACHERON**
+
+Jika script ini membantu kamu farming testnet, jangan lupa kasih **bintang repo ini** dan share ke teman pejuang faucet lainnya!
 
 ---
 
